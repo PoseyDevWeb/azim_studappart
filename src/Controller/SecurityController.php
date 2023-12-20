@@ -23,11 +23,11 @@ class SecurityController extends AbstractController
         // Dernier email saisi par l'utilisateur
         $lastEmail = $authenticationUtils->getLastUsername();
 
-        // // // Vérifier si la connexion est réussie
-        if (!$error && $lastEmail !== null && $lastEmail !== '' ) {
-            // Redirection vers home.index après une connexion réussie et si email et password ne sont pas vides
-            return $this->redirectToRoute('home.index');
-        }
+        // // // // Vérifier si la connexion est réussie
+        // if (!$error && $lastEmail !== null && $lastEmail !== '' ) {
+        //     // Redirection vers home.index après une connexion réussie et si email et password ne sont pas vides
+        //     return $this->redirectToRoute('home.index');
+        // }
 
         return $this->render('pages/security/login.html.twig', [
             'last_email' => $lastEmail,
